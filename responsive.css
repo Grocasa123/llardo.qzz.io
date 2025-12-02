@@ -1,0 +1,347 @@
+/* Optimizaciones adicionales para diseño responsivo */
+
+/* Media Queries Personalizadas */
+@media (max-width: 1200px) {
+    .hero-bg h1 {
+        font-size: 4rem;
+    }
+    
+    .stats-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero Section Responsive */
+    .hero-bg {
+        min-height: 100vh;
+        padding: 0 1rem;
+    }
+    
+    .hero-bg h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+    
+    .hero-bg p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    /* Navegación Responsive */
+    nav .hidden.md\\:flex {
+        display: none;
+    }
+    
+    nav .btn-primary {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Cards Responsive */
+    .glass-card {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        margin-bottom: 1rem;
+    }
+    
+    .glass-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .glass-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Stats Section Responsive */
+    .stats-number {
+        font-size: 2rem;
+    }
+    
+    .glass-card .text-gray-300 {
+        font-size: 0.9rem;
+    }
+    
+    /* Grid Responsive */
+    .grid {
+        gap: 1rem;
+    }
+    
+    .md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .lg\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .lg\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* About Section Responsive */
+    #about h2 {
+        font-size: 2.5rem;
+    }
+    
+    #about p {
+        font-size: 1rem;
+    }
+    
+    /* Contact Section Responsive */
+    #contact h2 {
+        font-size: 2.5rem;
+    }
+    
+    #contact p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    /* Footer Responsive */
+    footer .flex-col {
+        gap: 1rem;
+    }
+    
+    footer .space-x-8 {
+        gap: 1rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Móviles pequeños */
+    .hero-bg h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-bg p {
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .glass-card {
+        padding: 1.2rem;
+    }
+    
+    .stats-number {
+        font-size: 1.8rem;
+    }
+    
+    #features h2 {
+        font-size: 2rem;
+    }
+    
+    #about h2 {
+        font-size: 2rem;
+    }
+    
+    #contact h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Optimizaciones de Touch para Móviles */
+@media (hover: none) and (pointer: coarse) {
+    .glass-card:hover {
+        transform: none;
+        background: rgba(30, 41, 59, 0.3);
+        border-color: rgba(100, 116, 139, 0.2);
+    }
+    
+    .glass-card:hover .feature-icon {
+        transform: none;
+    }
+    
+    .btn-primary:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .nav-link:hover::after {
+        display: none;
+    }
+}
+
+/* Mejoras de Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-animation {
+        animation: none;
+    }
+    
+    .gradient-text {
+        animation: none;
+    }
+}
+
+/* Modo Oscuro Preferido */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #0f172a;
+        color: #f8fafc;
+    }
+}
+
+/* Mejoras de Rendimiento */
+.glass-card {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.btn-primary {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.feature-icon {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Animaciones de Entrada Mejoradas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Clases de Animación */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+/* Utilidades de Espaciado Personalizadas */
+.section-padding {
+    padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 3rem 0;
+    }
+}
+
+/* Utilidades de Tipografía */
+.text-balance {
+    text-wrap: balance;
+}
+
+/* Mejoras de Contraste */
+.glass-card p {
+    color: #e2e8f0;
+}
+
+.glass-card .text-gray-300 {
+    color: #cbd5e1;
+}
+
+/* Optimizaciones de Carga */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e40af;
+}
+
+/* Focus Visible para Accesibilidad */
+.btn-primary:focus-visible,
+.glass-card:focus-visible,
+.nav-link:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    nav,
+    .hero-bg,
+    #contact,
+    footer {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .glass-card {
+        background: white;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+}
