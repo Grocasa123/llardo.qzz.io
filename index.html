@@ -18,16 +18,19 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background: #0f172a;
-            color: #f8fafc;
-            overflow-x: hidden;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            position: relative;
-        }
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.hero-bg {
+  background: radial-gradient(circle at top, var(--accent-cyan) 0%, transparent 40%),
+              radial-gradient(circle at bottom, var(--accent-pink) 0%, transparent 40%),
+              var(--bg-primary);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+}
         
         .glass-card {
             background: rgba(30, 41, 59, 0.3);
